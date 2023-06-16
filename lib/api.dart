@@ -9,7 +9,6 @@ class Api {
       final response = await dio.get('$baseUrl/topstories.json');
       return List<int>.from(response.data);
     } on DioError catch (e) {
-      print('Error getting top stories: $e');
       return [];
     }
   }
@@ -19,7 +18,6 @@ class Api {
       final response = await dio.get('$baseUrl/item/$id.json');
       return response.data;
     } on DioError catch (e) {
-      print('Error getting item $id: $e');
       return {};
     }
   }

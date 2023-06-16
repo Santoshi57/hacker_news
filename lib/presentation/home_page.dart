@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         elevation: 0,
-        title: Text('Top News'),
+        title: const Text('Top News'),
       ),
-      body: items.isEmpty ? Center(child: CircularProgressIndicator()): ListView.builder(
+      body: items.isEmpty ? const Center(child: CircularProgressIndicator()): ListView.builder(
         itemCount: items.length,
           itemBuilder: (context, index){
               return Container(
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12)
                 ),
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                 child: ListTile(
                  onTap: (){
                    Navigator.push(context, MaterialPageRoute(builder: (context)=> CommentPage(index: index, items: items)));

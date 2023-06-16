@@ -8,7 +8,7 @@ class CommentPage extends StatefulWidget {
   final int index;
   final List items;
 
-  CommentPage({
+  const CommentPage({super.key,
     required this.index,
     required this.items
 });
@@ -41,7 +41,7 @@ class _CommentPageState extends State<CommentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Comments'),
+        title: const Text('Comments'),
       ),
       body: comments.isEmpty ? Center(child: CircularProgressIndicator()) : ListView.builder(
         itemCount: comments.length,
@@ -52,7 +52,7 @@ class _CommentPageState extends State<CommentPage> {
               color: Colors.grey.shade300,
               border: Border.all(width: 2)
             ),
-            margin:EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+            margin:const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
             child: ListTile(
               title: Text((comments[index]['text'])),
 
